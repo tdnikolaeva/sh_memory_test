@@ -13,7 +13,7 @@
 ```bash
 cd sh_memory_test
 docker build -t shmemory_test .
-docker run shmemory_test 
+docker run --name shmem_container shmemory_test
 ```
 
 ## Сборка и запуск непосредственно на своем устройстве
@@ -24,4 +24,15 @@ make
 ./prog1 | ./prog2
 ```
 
+## Очистка при использовании докера
 
+```bash
+docker rm shmem_container
+docker rmi shmemory_test
+```
+
+## Очистка при запуске на своем устройстве
+
+```bash
+make clean
+```
